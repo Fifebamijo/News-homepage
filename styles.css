@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+* {
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    max-width: 900px;
+    margin: auto;
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+}
+
+p {
+    line-height: 1.8;
+    color: hsl(236, 13%, 42%);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+
+}
+
+.header nav {
+    opacity: 0;
+    z-index: -999;
+    transition: all 0.3s ease-in-out;
+}
+
+.header nav.open {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    /* left: 0; */
+    width: 50vw;
+    height: 70vh;
+    opacity: 1;
+    background-color: #fff;
+    padding: 1.25rem;
+    z-index: 9999;
+}
+
+.header nav ul li{
+    margin: 2rem 0;
+    font-size: 18px;
+    list-style-type: none;
+    cursor: pointer;
+}
+
+.header nav ul li:hover {
+    color: rgb(224, 115, 115);
+}
+
+.header nav ul {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header #menu-btn  button {
+    background-color: transparent;
+    border: none;
+    margin-right: 10px;
+    cursor: pointer;
+
+}
+
+.header nav #menu-close {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    right: 1.25rem;
+    top: 1.25rem;
+    width: 10%;
+    z-index: 99999;
+    cursor: pointer;
+}
+
+.showcase {
+    padding: 20px;
+    padding-top: 0;
+}
+
+.showcase h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: hsl(240, 100, 5%);
+    margin: 1rem 0;
+}
+
+.showcase div:first-child article p {
+    margin-bottom: 1rem;
+    font-size: 12px;
+    padding: 20px;
+    padding-bottom: 0;
+    padding-left: 10px;
+}
+
+.showcase div:first-child article button {
+    background-color: hsl(5, 85%, 63%);
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    font-size: 12px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    margin-left: 18px;
+    
+}
+
+.showcase div:first-child article button:hover {
+    background-color: hsl(5, 68%, 44%);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.showcase > div:last-child {
+    background-color: hsl(240, 100%, 5%);
+    margin-top: 2rem;
+    padding: 1rem;
+    
+}
+
+.showcase > div:last-child h2 {
+    color: hsl(35, 77%, 62%);
+    margin-bottom: 1rem;
+}
+
+.showcase > div:last-child article:not(:last-child) {
+    border-bottom: 1px solid hsl(236, 13%, 42%);
+}
+
+.showcase > div:last-child h3 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+    margin-top: 20px;
+    font-size: 15px;
+
+}
+
+.showcase > div:last-child h3:hover {
+      color: hsl(35, 77%, 62%);
+      cursor: pointer;
+}
+
+
+.showcase > div:last-child p{
+    margin-bottom: 20px;
+    font-size: 11px;
+}
+
+.cards {
+    padding: 1.25rem;
+
+}
+
+.cards article {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+}
+
+.cards article img {
+    width: 25%;
+    padding: 1rem 0;
+}
+
+.cards article span {
+    color: hsl(240, 1%, 68%);
+    font-weight: bold;
+    font-size: 1.5rem;
+    opacity: 75%;
+}
+
+.cards article h4 {
+     font-size: 0.9rem;
+     color: hsl(240, 100%, 5%);
+     margin-top: 0.5rem;
+}
+
+.attribution  {
+    font-size: 11px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.attribution a {
+    text-decoration: none;
+    color: hsl(236, 6%, 57%);
+}
+
+@media (min-width: 768px) {
+    .header {
+        padding: 1.5rem;
+    }
+
+    img {
+        margin-bottom: 20px;
+    }
+
+    .header nav {
+        opacity: 1;
+        z-index: auto;
+        width: 100%;
+        padding-bottom: 0;
+        margin-bottom: 0;
+
+    }
+    .header nav .open {
+        position: relative;
+        width: auto;
+        background-color: transparent;
+        padding: 0;
+        z-index: auto;
+    }
+
+    .header nav #menu-close {
+        display: none;
+    }
+
+    .header #menu-btn {
+        display: none;
+    }
+
+    .header nav ul {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 1.5rem;
+        top: 0;
+        transform: translateY(0%);
+    }
+
+    .header nav ul li {
+        margin: 0;
+        font-size: 15px;
+    }
+    .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    }
+
+
+}
+
+@media (min-width: 1100px) {
+    .header {
+        padding: 20px;
+    }
+
+    .header nav {
+        opacity: 1;
+        z-index: auto;
+        width: 100%;
+
+    }
+    .header nav .open {
+        position: relative;
+        width: auto;
+        background-color: transparent;
+        padding: 0;
+        z-index: auto;
+    }
+
+    .header nav #menu-close {
+        display: none;
+    }
+
+    .header #menu-btn {
+        display: none;
+    }
+
+    .header nav ul {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 1.5rem;
+        top: 0;
+        transform: translateY(0%);
+    }
+
+    .header nav ul li {
+        margin: 0;
+        font-size: 15px;
+    }
+
+    header img {
+        width: 85%;
+        /* padding: 20px; */
+        padding-top: 50px;
+    }
+    .showcase {
+        display: flex;
+        gap: 1rem
+
+    }
+
+    .showcase h1 {
+        font-size: 40px;
+        padding: 0 15px;
+
+        padding-bottom: 0;
+    }
+
+    .showcase > div:first-child article {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        
+    }
+
+    .showcase > div:last-child {
+        margin-top: 0;
+        width: 75%;
+        height: 100%;
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .cards article img {
+        width: 35%;
+    }
+
+    .cards article h4 {
+        font-weight: 900;
+    }
+
+    .cards article p {
+        font-size: 12px;
+    }
+
+    .attribution p {
+        display: inline-block;
+        margin-left: 180px;
+        padding-bottom: 50px;
+    }
+}
